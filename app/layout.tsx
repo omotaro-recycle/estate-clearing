@@ -10,8 +10,8 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: 'こころ整理 | 生前整理・不用品整理サービス',
-  description: '人生の大切な思い出を、一緒に整理します。生前整理・不用品整理は「こころ整理」にお任せください。無料相談受付中。',
+  title: '買取+整理でお得に片付け | 不用品買取・整理サービス',
+  description: '買取してから整理すれば費用がグッとお得に!不用品買取・整理は地元で20年の実績。見積もり無料・出張費無料。まずは無料査定から!',
   generator: 'v0.app',
   icons: {
     icon: [

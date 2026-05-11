@@ -1,47 +1,35 @@
-import Link from "next/link"
+import { Phone, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { MessageCircle, Phone } from "lucide-react"
 
 export function CtaSection() {
   return (
-    <section className="py-20 sm:py-28 bg-primary text-primary-foreground">
+    <section className="py-12 sm:py-16 bg-primary">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-6 text-balance">
-          まずはお気軽に
-          <br className="sm:hidden" />
-          ご相談ください
-        </h2>
-        <p className="text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed mb-10">
-          「何から始めればいいかわからない」
-          「費用がどのくらいかかるか不安」
-          そんなお悩みも、まずはご相談から。
-          専門スタッフが丁寧にお答えいたします。
+        <p className="text-primary-foreground/90 mb-2 text-sm sm:text-base">
+          まずは<span className="font-bold">無料査定</span>から!お気軽にご相談ください
         </p>
-        
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button
-            asChild
-            size="lg"
-            variant="secondary"
-            className="rounded-full text-base px-8 bg-background text-foreground hover:bg-background/90"
-          >
-            <Link href="#contact">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              無料相談フォーム
-            </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="rounded-full text-base px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-          >
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary-foreground mb-8">
+          お電話でのご相談はこちら
+        </h2>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+          <Button asChild size="lg" className="rounded-full text-lg px-10 py-7 bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg">
             <a href="tel:0120-000-000">
-              <Phone className="w-5 h-5 mr-2" />
+              <Phone className="w-6 h-6 mr-2" />
               0120-000-000
             </a>
           </Button>
+          <Button asChild size="lg" variant="outline" className="rounded-full text-lg px-10 py-7 bg-card hover:bg-card/90 text-foreground border-0">
+            <a href="#contact">
+              <MessageCircle className="w-6 h-6 mr-2" />
+              LINEで相談
+            </a>
+          </Button>
         </div>
+
+        <p className="text-primary-foreground/80 text-sm">
+          受付時間 9:00〜19:00（年中無休）
+        </p>
       </div>
     </section>
   )

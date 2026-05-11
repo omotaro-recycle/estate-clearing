@@ -9,57 +9,55 @@ import {
 
 const faqs = [
   {
-    question: "見積もりは本当に無料ですか？",
-    answer: "はい、お見積もりは完全無料です。現地にお伺いして、整理する物の量や内容を確認した上で、詳細なお見積もりをご提示します。お見積もり後にキャンセルされても、費用は一切かかりませんのでご安心ください。"
+    question: "見積もりは本当に無料ですか?",
+    answer: "はい、お見積もりは完全無料です。出張費もかかりません。お見積もり後にキャンセルされても費用は一切かかりませんのでご安心ください。"
   },
   {
-    question: "どのくらいの期間がかかりますか？",
-    answer: "お部屋の広さや物の量によって異なりますが、一般的な1Kのお部屋で半日〜1日、3LDKで1〜2日程度が目安です。お客様のご要望やペースに合わせて、複数日に分けての作業も可能です。"
+    question: "どんなものが買取できますか?",
+    answer: "骨董品、美術品、ブランド品、貴金属、時計、食器、楽器、カメラ、着物など幅広く買取しています。「これは売れるかな?」と思ったら、まずはご相談ください。"
   },
   {
-    question: "遠方でも対応してもらえますか？",
-    answer: "はい、関東一円はもちろん、遠方のお客様のご相談も承っております。まずはお電話やオンラインでの事前相談も可能ですので、お気軽にお問い合わせください。"
+    question: "古いものでも買い取ってもらえますか?",
+    answer: "はい、古いものほど価値がある場合もあります。年代物の食器や家具、昔のおもちゃなど、意外なものに値段がつくこともありますので、捨てる前にぜひご相談ください。"
   },
   {
-    question: "貴重品や形見の仕分けもお願いできますか？",
-    answer: "もちろんです。作業前に、残したいもの・処分するものをご一緒に確認しながら進めます。判断に迷うものは一旦保留とし、最終的にはお客様にご判断いただきますのでご安心ください。"
+    question: "遠方でも来てもらえますか?",
+    answer: "関東一円はもちろん、ご相談に応じて対応エリアを広げることも可能です。まずはお電話やLINEでご相談ください。"
   },
   {
-    question: "急ぎの依頼にも対応してもらえますか？",
-    answer: "可能な限り対応いたします。スケジュールの空き状況によりますが、お急ぎの場合は翌日対応も可能な場合がございます。まずはお電話でご相談ください。"
+    question: "買取だけでもお願いできますか?",
+    answer: "もちろんです。買取のみのご依頼も大歓迎です。不用品整理と組み合わせると、トータルでお得になることが多いです。"
   },
   {
-    question: "一人暮らしの高齢者ですが、相談に乗ってもらえますか？",
-    answer: "もちろんです。むしろ、お一人でお悩みの方こそ、ぜひご相談ください。ご家族様のご同席がなくても、丁寧にご説明しながら進めてまいります。何でもお気軽にお話しください。"
+    question: "急ぎの依頼にも対応できますか?",
+    answer: "可能な限り対応いたします。スケジュールの空き状況によりますが、翌日対応も可能な場合がございます。お急ぎの場合はお電話でご相談ください。"
   }
 ]
 
 export function FaqSection() {
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-background">
+    <section id="faq" className="py-16 sm:py-20 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-primary font-medium mb-3 text-sm">FAQ</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-foreground mb-4">
+        <div className="text-center mb-10">
+          <span className="inline-block bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold mb-4">
             よくあるご質問
+          </span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
+            お客様からよくいただく質問
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            お客様からよくいただくご質問をまとめました。
-            その他のご質問もお気軽にお問い合わせください。
-          </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="bg-card rounded-xl border border-border px-6"
+              className="bg-card rounded-xl border border-border px-5"
             >
-              <AccordionTrigger className="text-left text-foreground hover:text-primary py-5 text-base">
+              <AccordionTrigger className="text-left text-foreground hover:text-primary py-4 text-base font-medium">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+              <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
