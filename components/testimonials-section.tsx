@@ -4,57 +4,51 @@ import { Star } from "lucide-react"
 const testimonials = [
   {
     name: "田中様",
-    age: "70代",
+    age: "60代",
     location: "東京都",
     image: "/images/testimonial-1.jpg",
-    content: "一人では何から手をつけていいかわからず困っていましたが、スタッフの方が親身に相談に乗ってくださり、少しずつ整理を進めることができました。思い出の品を一緒に見ながら、丁寧に対応してくださったことに感謝しています。"
+    title: "思わぬお宝が!",
+    content: "母の遺品整理をお願いしました。捨てようと思っていた古い食器に値段がついてびっくり!整理費用の足しになりました。"
   },
   {
     name: "山本様",
     age: "50代",
     location: "神奈川県",
     image: "/images/testimonial-2.jpg",
-    content: "母の遺品整理をお願いしました。形見分けの相談にも乗っていただき、大切なものを見落とすことなく整理できました。母も喜んでいると思います。"
+    title: "対応が丁寧でした",
+    content: "一つひとつ丁寧に説明してくれて、納得して依頼できました。無理な営業もなく、安心してお任せできました。"
   },
   {
     name: "佐藤様",
     age: "40代",
     location: "埼玉県",
     image: "/images/testimonial-3.jpg",
-    content: "実家の生前整理で相談しました。父は最初乗り気ではありませんでしたが、スタッフの方の丁寧な説明と、父のペースに合わせた進め方で、最終的には「頼んでよかった」と言っていました。"
+    title: "まとめてお願いできて楽!",
+    content: "実家の片付けで困っていましたが、買取から片付けまで全部お任せできて本当に助かりました。"
   }
 ]
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-20 sm:py-28 bg-background">
+    <section id="testimonials" className="py-16 sm:py-20 bg-card">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-primary font-medium mb-3 text-sm">TESTIMONIALS</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-foreground mb-4">
+        <div className="text-center mb-10">
+          <span className="inline-block bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold mb-4">
             お客様の声
+          </span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
+            ご利用いただいた方からの声
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            実際にご利用いただいたお客様からの声をご紹介します。
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card rounded-2xl p-6 sm:p-8 border border-border"
+              className="bg-background rounded-2xl p-6 border border-border"
             >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
-                {testimonial.content}
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -69,6 +63,15 @@ export function TestimonialsSection() {
                   </p>
                 </div>
               </div>
+              <div className="flex gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                ))}
+              </div>
+              <h3 className="font-bold text-foreground mb-2">{testimonial.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                {testimonial.content}
+              </p>
             </div>
           ))}
         </div>

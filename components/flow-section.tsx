@@ -1,64 +1,90 @@
-import { Phone, ClipboardList, Calendar, Sparkles } from "lucide-react"
+import { Phone, Search, Banknote, Sparkles } from "lucide-react"
 
 const steps = [
   {
-    number: "01",
+    number: "1",
     icon: Phone,
-    title: "お問い合わせ",
-    description: "まずはお電話またはフォームからお気軽にご相談ください。お悩みやご要望をお聞かせください。"
+    title: "無料査定",
+    description: "お電話・LINE・メールでお気軽にご相談ください。"
   },
   {
-    number: "02",
-    icon: ClipboardList,
-    title: "無料お見積もり",
-    description: "ご自宅にお伺いし、整理する量や内容を確認。その場で詳細なお見積もりをご提示します。"
+    number: "2",
+    icon: Search,
+    title: "査定・お見積り",
+    description: "ご自宅にお伺いし、丁寧に査定・お見積りします。"
   },
   {
-    number: "03",
-    icon: Calendar,
-    title: "作業日決定",
-    description: "お客様のご都合に合わせて作業日を決定。当日のスケジュールも丁寧にご説明します。"
+    number: "3",
+    icon: Banknote,
+    title: "買取成立",
+    description: "ご納得いただければ、その場で現金にてお支払いします。"
   },
   {
-    number: "04",
+    number: "4",
     icon: Sparkles,
-    title: "作業・お引き渡し",
-    description: "丁寧に仕分け・整理を行い、清掃まで完了。ご確認いただいてからお引き渡しとなります。"
+    title: "不用品整理",
+    description: "残りの整理・片付けを丁寧に行います。"
   }
+]
+
+const guarantees = [
+  "見積もり無料",
+  "出張費無料",
+  "追加料金なし",
+  "無理な営業なし"
 ]
 
 export function FlowSection() {
   return (
-    <section id="flow" className="py-20 sm:py-28 bg-card">
+    <section id="flow" className="py-16 sm:py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-primary font-medium mb-3 text-sm">HOW IT WORKS</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-foreground mb-4">
+        <div className="text-center mb-10">
+          <span className="inline-block bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold mb-4">
             ご利用の流れ
+          </span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
+            カンタン4ステップ
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            初めてのご依頼でも安心。
-            お問い合わせから作業完了まで、丁寧にサポートいたします。
-          </p>
         </div>
 
-        <div className="relative">
-          {/* Connection Line */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-border" />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="relative text-center">
-                <div className="relative z-10 mx-auto w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6">
-                  <step.icon className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <span className="text-primary/30 text-4xl font-bold absolute -top-2 left-1/2 -translate-x-1/2">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10">
+          {steps.map((step, index) => (
+            <div key={step.number} className="relative">
+              <div className="bg-card rounded-2xl border border-border p-6 text-center h-full">
+                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   {step.number}
-                </span>
-                <h3 className="text-lg font-medium text-foreground mb-3">{step.title}</h3>
+                </div>
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <step.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-base font-bold text-foreground mb-2">{step.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {step.description}
                 </p>
+              </div>
+              {/* Arrow */}
+              {index < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-border text-2xl">
+                  →
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Guarantees */}
+        <div className="bg-primary/5 rounded-2xl p-6 sm:p-8">
+          <h3 className="text-center font-bold text-foreground mb-6">安心してご利用いただけます!</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {guarantees.map((guarantee) => (
+              <div
+                key={guarantee}
+                className="flex items-center gap-2 bg-card rounded-full px-5 py-2.5 border border-border"
+              >
+                <span className="w-5 h-5 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold">
+                  ✓
+                </span>
+                <span className="text-foreground font-medium text-sm">{guarantee}</span>
               </div>
             ))}
           </div>
