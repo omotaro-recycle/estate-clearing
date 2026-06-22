@@ -35,17 +35,17 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-background mb-4">お問い合わせ</h4>
             <div className="space-y-3 text-sm">
-              <a href="tel:0120-000-000" className="flex items-center gap-2 text-background hover:text-primary transition-colors">
+              <a href="tel:080-3125-7555" className="flex items-center gap-2 text-background hover:text-primary transition-colors">
                 <Phone className="w-4 h-4" />
-                <span className="text-lg font-bold">0120-000-000</span>
+                <span className="text-lg font-bold">080-3125-7555</span>
               </a>
               <div className="flex items-center gap-2 text-background/70">
                 <Clock className="w-4 h-4" />
-                <span>9:00〜19:00（年中無休）</span>
+                <span>年中無休　9:00〜24:00</span>
               </div>
               <div className="flex items-start gap-2 text-background/70">
                 <MapPin className="w-4 h-4 mt-0.5" />
-                <span>東京都・神奈川県・埼玉県・千葉県<br />その他エリアもご相談ください</span>
+                <span>〒339-0068<br />さいたま市岩槻区並木1-6-1 1階<br />駅から徒歩10分／駐車場1台あり</span>
               </div>
             </div>
           </div>
