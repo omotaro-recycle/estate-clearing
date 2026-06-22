@@ -51,20 +51,23 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <Button asChild size="lg" className="rounded-full text-base px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground">
-                <a href="tel:0120-000-000">
+                <a href="tel:080-3125-7555">
                   <Phone className="w-5 h-5 mr-2" />
-                  0120-000-000
+                  080-3125-7555
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full text-base px-8 py-6 bg-card">
-                <Link href="#contact">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  LINEで相談する
-                </Link>
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full text-base px-8 py-6 bg-card"
+                onClick={() => window.open("https://line.me/R/ti/p/@705qbjqc", "_blank")}
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                LINEで相談する
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-3 text-center lg:text-left">
-              受付時間 9:00〜19:00（年中無休）
+              年中無休　9:00〜24:00
             </p>
           </div>
 

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Phone, Clock, MessageCircle, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -34,24 +35,24 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div>
           {/* Contact Methods */}
-          <div>
-            <div className="bg-primary rounded-2xl p-6 sm:p-8 text-primary-foreground mb-6">
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-primary rounded-2xl p-6 sm:p-8 text-primary-foreground">
               <h3 className="text-lg font-bold mb-4">お電話でのご相談</h3>
-              <a href="tel:0120-000-000" className="flex items-center gap-3 mb-3">
+              <a href="tel:080-3125-7555" className="flex items-center gap-3 mb-3">
                 <div className="w-12 h-12 rounded-full bg-primary-foreground/20 flex items-center justify-center">
                   <Phone className="w-6 h-6" />
                 </div>
-                <span className="text-3xl font-bold">0120-000-000</span>
+                <span className="text-3xl font-bold">080-3125-7555</span>
               </a>
               <div className="flex items-center gap-2 text-sm text-primary-foreground/80">
                 <Clock className="w-4 h-4" />
-                <span>受付時間 9:00〜19:00（年中無休）</span>
+                <span>年中無休　9:00〜24:00</span>
               </div>
             </div>
 
-            <div className="bg-[#06C755] rounded-2xl p-6 sm:p-8 text-white mb-6">
+            <div className="bg-[#06C755] rounded-2xl p-6 sm:p-8 text-white">
               <h3 className="text-lg font-bold mb-4">LINEでのご相談</h3>
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
@@ -62,28 +63,33 @@ export function ContactSection() {
                   <p className="text-sm text-white/80">スマホで簡単にご相談</p>
                 </div>
               </div>
-              {/* QR Code Placeholder */}
-              <div className="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center">
-                <span className="text-foreground text-xs text-center">QRコード</span>
+              <div className="bg-white rounded-xl p-2 w-32 h-32 flex items-center justify-center">
+                <Image
+                  src="/images/line-qr.png"
+                  alt="LINE友だち追加QRコード"
+                  width={112}
+                  height={112}
+                  className="w-full h-full object-contain"
+                />
               </div>
-            </div>
-
-            {/* Trust Points */}
-            <div className="space-y-3">
-              {[
-                "しつこい営業は一切しません",
-                "お見積もり後のキャンセルOK",
-                "秘密厳守で対応いたします"
-              ].map((point) => (
-                <div key={point} className="flex items-center gap-3 text-muted-foreground">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>{point}</span>
-                </div>
-              ))}
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Trust Points */}
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 sm:gap-6">
+            {[
+              "しつこい営業は一切しません",
+              "お見積もり後のキャンセルOK",
+              "秘密厳守で対応いたします"
+            ].map((point) => (
+              <div key={point} className="flex items-center gap-2 text-muted-foreground">
+                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                <span>{point}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Contact Form - 一旦非表示
           <div className="bg-card rounded-2xl p-6 sm:p-8 border border-border">
             <h3 className="text-lg font-bold text-foreground mb-6">メールでのお問い合わせ</h3>
             {isSubmitted ? (
@@ -125,7 +131,7 @@ export function ContactSection() {
                   <Label htmlFor="address">ご住所（市区町村まで）</Label>
                   <Input
                     id="address"
-                    placeholder="東京都○○区"
+                    placeholder="さいたま市岩槻区"
                     className="rounded-lg"
                   />
                 </div>
@@ -150,6 +156,7 @@ export function ContactSection() {
               </form>
             )}
           </div>
+          */}
         </div>
       </div>
     </section>
