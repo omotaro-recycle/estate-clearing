@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Phone, MessageCircle, CheckCircle } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Phone, MessageCircle, CheckCircle } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -22,12 +22,15 @@ export function HeroSection() {
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-foreground mb-4">
               <span className="text-primary">買取</span>してから整理すれば
               <br />
-              <span className="text-3xl sm:text-4xl lg:text-5xl">費用がグッとお得に!</span>
+              <span className="text-3xl sm:text-4xl lg:text-5xl">
+                費用がグッとお得に!
+              </span>
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0">
               地元で20年、リサイクルショップを運営する
-              <span className="font-medium text-foreground">二児の父</span>が対応!
+              <span className="font-medium text-foreground">二児の父</span>
+              が対応!
               <br />
               一つひとつ丁寧に査定・対応いたします。
             </p>
@@ -50,7 +53,11 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <Button asChild size="lg" className="rounded-full text-base px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full text-base px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground"
+              >
                 <a href="tel:080-3125-7555">
                   <Phone className="w-5 h-5 mr-2" />
                   080-3125-7555
@@ -60,7 +67,9 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 className="rounded-full text-base px-8 py-6 bg-card"
-                onClick={() => window.open("https://line.me/R/ti/p/@705qbjqc", "_blank")}
+                onClick={() =>
+                  window.open("https://line.me/R/ti/p/@705qbjqc", "_blank")
+                }
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 LINEで相談する
@@ -75,7 +84,7 @@ export function HeroSection() {
           <div className="relative flex justify-center">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               <Image
-                src="/images/staff-main.jpg"
+                src="/images/boss_image.jpg"
                 alt="スタッフ"
                 fill
                 className="object-cover rounded-3xl"
@@ -94,10 +103,16 @@ export function HeroSection() {
         <div className="mt-12 bg-card rounded-2xl border border-border p-6 sm:p-8">
           <div className="grid sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <div className="text-muted-foreground text-sm mb-2">そのまま処分すると...</div>
+              <div className="text-muted-foreground text-sm mb-2">
+                そのまま処分すると...
+              </div>
               <div className="bg-muted rounded-xl p-4">
-                <p className="text-foreground font-medium">価値あるものも処分</p>
-                <p className="text-destructive font-bold text-lg">費用が高くなる</p>
+                <p className="text-foreground font-medium">
+                  価値あるものも処分
+                </p>
+                <p className="text-destructive font-bold text-lg">
+                  費用が高くなる
+                </p>
               </div>
             </div>
             <div className="text-center flex items-center justify-center">
@@ -106,15 +121,21 @@ export function HeroSection() {
               </div>
             </div>
             <div className="text-center">
-              <div className="text-muted-foreground text-sm mb-2">買取後に整理すると...</div>
+              <div className="text-muted-foreground text-sm mb-2">
+                買取後に整理すると...
+              </div>
               <div className="bg-primary/10 rounded-xl p-4 border-2 border-primary">
-                <p className="text-foreground font-medium">価値あるものを現金化</p>
-                <p className="text-primary font-bold text-lg">トータル費用を削減!</p>
+                <p className="text-foreground font-medium">
+                  価値あるものを現金化
+                </p>
+                <p className="text-primary font-bold text-lg">
+                  トータル費用を削減!
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
